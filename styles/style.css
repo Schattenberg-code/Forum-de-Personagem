@@ -1,3 +1,20 @@
+
 body{
     background-color: rgba(0, 0, 0, 0.397);
+}
+
+.section-image{
+    position: absolute;
+    top: 240px;
+    left: 50%;
+}
+
+.position-form{
+    position: absolute;
+    bottom: -150px;
+    left: 50%;
+}
+
+#image-logo{
+    max-width: 800px;
 }
