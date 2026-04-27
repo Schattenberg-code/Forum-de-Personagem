@@ -4,18 +4,16 @@ document.getElementById("form-login").onsubmit = (e) => {
 
     console.log("OI");
 
-    let usuario = document.getElementById('usuario').value
-    let senha = document.getElementById('senha').value
+    let usuario = document.getElementById('usuario').value;
+    let senha = document.getElementById('senha').value;
 
     let valido = true;
 
     if (usuario !== 'admin'){
         valido = false;
-        return;
     }
-    if (senha !== '123'){
+    if (senha !== '123' || isNaN(senha)){
         valido = false;
-        return;
     }
 
     if(valido == true){
