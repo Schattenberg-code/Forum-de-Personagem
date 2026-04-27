@@ -18,7 +18,7 @@ document.getElementById("form-login").onsubmit = (e) => {
 
     if(valido == true){
         console.log("Validado");
-        window.location.replace("../forum.html");
+        window.location.replace("forum.html");
     }else{
         console.log("Inválido");
     }
