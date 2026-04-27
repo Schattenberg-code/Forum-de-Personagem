@@ -8,11 +8,11 @@ if (window.location.pathname.includes("forum.html")) {
 
     let logout = document.getElementById("logout");
 
-    logout.onclick = (sair) => {
+    logout.addEventListener('click', function (sair){
 
-        localStorage.removeItem('logado');
+        localStorage.clear();
 
-    }
+    });
 }
 
 document.getElementById("form-login").onsubmit = (e) => {
