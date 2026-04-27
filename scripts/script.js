@@ -2,21 +2,32 @@ if (window.location.pathname.includes("forum.html")) {
     if (localStorage.getItem("logado") !== "true") {
         window.location.replace("index.html");
     }
-    const timer = setTimeout(() => {
-        window.location.replace("index.html");
-    }, 300000);
+
+    let timer;
+    function ResetarTime() {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            alert('inatividade!')
+            window.location.replace("index.html");
+        }, 30000);
+    }
+
+    window.onload = ResetarTime;
+    window.onmousemove = ResetarTime;
+    window.onkeydown = ResetarTime;
 
     let logout = document.getElementById("logout");
 
-    logout.addEventListener('click', function (sair){
+    logout.addEventListener('click', function (sair) {
 
         localStorage.clear();
 
     });
+
 }
 
 document.getElementById("form-login").onsubmit = (e) => {
-    
+
     e.preventDefault();
 
     console.log("OI");
@@ -26,18 +37,18 @@ document.getElementById("form-login").onsubmit = (e) => {
 
     let valido = true;
 
-    if (usuario !== 'admin'){
+    if (usuario !== 'admin') {
         valido = false;
     }
-    if (senha !== '1234' || isNaN(senha)){
+    if (senha !== '1234' || isNaN(senha)) {
         valido = false;
     }
 
-    if(valido == true){
+    if (valido == true) {
         console.log("Validado");
         localStorage.setItem("logado", "true");
         window.location.replace("forum.html");
-    }else{
+    } else {
         console.log("Inválido");
     }
 }
