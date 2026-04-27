@@ -1,6 +1,9 @@
 
 body{
-    background-color: rgba(34, 50, 109, 0.397);
+    background-image: url(assets/images/image_background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 3% 4%;
 }
 
 .image{
@@ -8,6 +11,11 @@ body{
     margin-bottom: 20px;
     width: 700px;
     caret-color: transparent;
+    
+}
+
+#container-login{
+    background-color: black;
 }
 
 .position-form{
