@@ -4,6 +4,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 3% 4%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .image{
@@ -15,7 +16,8 @@ body{
 }
 
 #container-login{
-    background-color: black;
+    background-color: rgba(255, 255, 255, 0.884)!important;
+    color: rgb(0, 0, 0) !important;
 }
 
 .position-form{
