@@ -1,3 +1,9 @@
+if (window.location.pathname.includes("forum.html")) {
+    if (localStorage.getItem("logado") !== "true") {
+        window.location.replace("index.html");
+    }
+}
+
 document.getElementById("form-login").onsubmit = (e) => {
     
     e.preventDefault();
@@ -18,7 +24,8 @@ document.getElementById("form-login").onsubmit = (e) => {
 
     if(valido == true){
         console.log("Validado");
-        window.location.replace("../forum.html");
+        localStorage.setItem("logado", "true");
+        window.location.replace("forum.html");
     }else{
         console.log("Inválido");
     }
