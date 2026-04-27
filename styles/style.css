@@ -1,12 +1,13 @@
 
 body{
-    background-color: rgba(28, 39, 78, 0.397);
+    background-color: rgba(34, 50, 109, 0.397);
 }
 
 .image{
     margin-top: 20px;
     margin-bottom: 20px;
     width: 700px;
+    caret-color: transparent;
 }
 
 .position-form{
