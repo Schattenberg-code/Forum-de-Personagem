@@ -1,15 +1,16 @@
 
 body{
-    background-color: rgba(0, 0, 0, 0.397);
+    background-color: rgba(28, 39, 78, 0.397);
 }
 
-.section-image{
-    position: absolute;
-    top: 240px;
-    left: 50%;
+.image{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 700px;
 }
 
 .position-form{
+    max-width: 400px;
     position: absolute;
     bottom: -150px;
     left: 50%;
