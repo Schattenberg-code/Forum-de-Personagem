@@ -29,7 +29,7 @@ document.getElementById("form-login").onsubmit = (e) => {
     if (usuario !== 'admin'){
         valido = false;
     }
-    if (senha !== '123' || isNaN(senha)){
+    if (senha !== '1234' || isNaN(senha)){
         valido = false;
     }
 
