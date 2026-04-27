@@ -2,6 +2,17 @@ if (window.location.pathname.includes("forum.html")) {
     if (localStorage.getItem("logado") !== "true") {
         window.location.replace("index.html");
     }
+    const timer = setTimeout(() => {
+        window.location.replace("index.html");
+    }, 300000);
+
+    let logout = document.getElementById("logout");
+
+    logout.addEventListener('click', function (sair){
+
+        localStorage.clear();
+
+    });
 }
 
 document.getElementById("form-login").onsubmit = (e) => {
