@@ -1,3 +1,5 @@
+
+
 if (window.location.pathname.includes("forum.html")) {
     if (localStorage.getItem("logado") !== "true") {
         window.location.replace("index.html");
@@ -9,7 +11,7 @@ if (window.location.pathname.includes("forum.html")) {
         timer = setTimeout(() => {
             alert('inatividade!')
             window.location.replace("index.html");
-        }, 30000);
+        }, 300000);
     }
 
     window.onload = ResetarTime;
@@ -34,14 +36,19 @@ document.getElementById("form-login").onsubmit = (e) => {
 
     let usuario = document.getElementById('usuario').value;
     let senha = document.getElementById('senha').value;
+    let msg = document.getElementById('mensagem');
+
+    msg.innerHTML = "";
 
     let valido = true;
 
     if (usuario !== 'admin') {
         valido = false;
+        msg.innerHTML = "<div><p id='erro' class='text-danger d-flex justify-content-center'> Usuário Inválido </p></div>";
     }
     if (senha !== '1234' || isNaN(senha)) {
         valido = false;
+        msg.innerHTML = "<div><p id='erro' class='text-danger d-flex justify-content-center'> Senha Inválida </p></div>";
     }
 
     if (valido == true) {

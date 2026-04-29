@@ -17,12 +17,14 @@
     <main>
         <section>
             <div class="d-flex justify-content-center">
-                <img id="" class="m-5 img-fluid image" src="assets/images/Assassin's_Creed_Logo.png" alt="Logo do Assasins Creed">
+                <img id="" class="m-5 img-fluid image" src="assets/images/Assassin's_Creed_Logo.png"
+                    alt="Logo do Assasins Creed">
             </div>
         </section>
 
-        <div id="container-login" class="container-xxl pb-4 pt-5 shadow-lg p-3 mb-5 m-20 bg-body-tertiary rounded-1 position-form translate-middle">
-            <form id="form-login" action="">
+        <div id="container-login"
+            class="container-xxl pb-4 pt-5 shadow-lg p-3 mb-5 m-20 bg-body-tertiary rounded-1 position-form translate-middle">
+            <form id="form-login" class="needs-validation" novalidate action="">
                 <p class="h2 pb-3 d-flex justify-content-center">Login</p>
                 <div class="mb-3">
                     <label for="usuario" class="form-label">Usuário:</label>
@@ -34,6 +36,9 @@
                 </div>
                 <div class="d-grid gap-2">
                     <button class="btn btn-primary" type="submit">Entrar</button>
+                    <div id="mensagem">
+                        <p>erro</p>
+                    </div>
                 </div>
             </form>
 

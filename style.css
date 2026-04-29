@@ -108,3 +108,15 @@
     display: flex;
     margin-bottom: 4px;
 }
+
+#mensagem{
+    margin: 0;
+    padding: 0;
+    visibility: hidden;
+    height: 0;
+}
+#erro{
+    margin: 0;
+    padding: 0;
+    visibility: visible;
+}
