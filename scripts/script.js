@@ -1,4 +1,4 @@
-
+//=============================================================================================================================================//
 
 if (window.location.pathname.includes("forum.html") || window.location.pathname.includes("comentarios.html")) {
     if (localStorage.getItem("logado") !== "true") {
@@ -29,6 +29,8 @@ if (window.location.pathname.includes("forum.html") || window.location.pathname.
     });
 
 }
+
+//=============================================================================================================================================//
 
 const form_login = document.getElementById("form-login")
 
@@ -67,8 +69,22 @@ if (form_login) {
     }
 }
 
+//=============================================================================================================================================//
 
 const form_envio = document.querySelector('#mandar_comentario');
+
+function scroll(){
+    let container_comentario = document.getElementById("div_comentarios");
+
+    container_comentario.scrollTo({
+        top: container_comentario.scrollHeight,
+        behavior: "smooth"
+    })
+}
+
+if (window.location.pathname.includes("comentarios.html")) {
+    window.onload = scroll()
+}
 
 if (form_envio) {
     form_envio.addEventListener('submit', function (e) {
@@ -77,8 +93,8 @@ if (form_envio) {
         const textoDigitado = form_envio.querySelector('textarea').value;
 
         if (textoDigitado !== '') {
-            const todosComentarios = document.querySelectorAll('.comentario_alheio');
-            const ultimoComentario = todosComentarios[todosComentarios.length - 1];
+            let todosComentarios = document.querySelectorAll('.comentario_alheio');
+            let ultimoComentario = todosComentarios[todosComentarios.length - 1];
 
             const novoComentarioHTML = `
             <div class="comentario_alheio">
@@ -111,22 +127,33 @@ if (form_envio) {
 
             if (ultimoComentario) {
                 ultimoComentario.insertAdjacentHTML('afterend', novoComentarioHTML);
+                scroll();
             }
 
             form_envio.reset();
 
-            if (todosComentarios.length >= 1) {
-                const todosComentarios = document.querySelectorAll('.comentario_alheio');
-                const ultimoComentario = todosComentarios[todosComentarios.length - 1];
+            if (todosComentarios.length == 6) {
+                let todosComentarios = document.querySelectorAll('.comentario_alheio');
+                let ultimoComentario = todosComentarios[todosComentarios.length - 1];
                 setTimeout(() => {
                     ultimoComentario.insertAdjacentHTML('afterend', BotDava);
+
+                    todosComentarios = document.querySelectorAll('.comentario_alheio');
+                    ultimoComentario = todosComentarios[todosComentarios.length - 1];
+                    scroll();
+                    setTimeout(() => {
+                        ultimoComentario.insertAdjacentHTML('afterend', BotNamoDava);
+                        scroll();
+                    }, 5000);
                 }, 2500);
-                
-                
+
+
             }
         }
 
 
     });
 }
+
+//=============================================================================================================================================//
 
