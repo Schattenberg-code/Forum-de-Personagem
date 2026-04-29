@@ -149,6 +149,13 @@ textarea{
     justify-content: flex-end;
     align-items: flex-end;
 }
+.primeiro_com{
+    visibility: hidden;
+    margin: 0px;
+    padding: 0px;
+    width: 0;
+    height: 0;
+}
 
 .comentario{
     padding-top: 2%;
