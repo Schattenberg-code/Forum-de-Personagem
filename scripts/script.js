@@ -1,8 +1,9 @@
 
 
-if (window.location.pathname.includes("forum.html")) {
+if (window.location.pathname.includes("forum.html") || window.location.pathname.includes("comentarios.html")) {
     if (localStorage.getItem("logado") !== "true") {
         window.location.replace("index.html");
+        alert("LOGUE ANTES DE USAR");
     }
 
     let timer;
@@ -29,40 +30,45 @@ if (window.location.pathname.includes("forum.html")) {
 
 }
 
-document.getElementById("form-login").onsubmit = (e) => {
+const form_login = document.getElementById("form-login")
 
-    e.preventDefault();
+if (form_login) {
+    form_login.onsubmit = (e) => {
 
-    console.log("OI");
+        e.preventDefault();
 
-    let usuario = document.getElementById('usuario').value;
-    let senha = document.getElementById('senha').value;
-    let msg = document.getElementById('mensagem');
+        console.log("OI");
 
-    msg.innerHTML = "";
+        let usuario = document.getElementById('usuario').value;
+        let senha = document.getElementById('senha').value;
+        let msg = document.getElementById('mensagem');
 
-    let valido = true;
+        msg.innerHTML = "";
 
-    if (senha !== '1234' || isNaN(senha)) {
-        valido = false;
-        msg.innerHTML = "<div><p id='erro' class='text-danger d-flex justify-content-center'> Senha Inválida </p></div>";
-    }
+        let valido = true;
 
-    if (usuario !== 'admin') {
-        valido = false;
-        msg.innerHTML = "<div><p id='erro' class='text-danger d-flex justify-content-center'> Usuário Inválido </p></div>";
-    }
+        if (senha !== '1234' || isNaN(senha)) {
+            valido = false;
+            msg.innerHTML = "<div><p id='erro' class='text-danger d-flex justify-content-center'> Senha Inválida </p></div>";
+        }
 
-    if (valido == true) {
-        console.log("Validado");
-        localStorage.setItem("logado", "true");
-        window.location.replace("forum.html");
-    } else {
-        console.log("Inválido");
+        if (usuario !== 'admin') {
+            valido = false;
+            msg.innerHTML = "<div><p id='erro' class='text-danger d-flex justify-content-center'> Usuário Inválido </p></div>";
+        }
+
+        if (valido == true) {
+            console.log("Validado");
+            localStorage.setItem("logado", "true");
+            window.location.replace("forum.html");
+        } else {
+            console.log("Inválido");
+        }
     }
 }
 
-document.getElementById("com_personalizado").onsubmit = (evento) => {
+
+document.getElementById("mandar_comentario").onsubmit = (evento) => {
     evento.preventDefault();
 
     console.log("ALOOO")
