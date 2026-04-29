@@ -167,7 +167,6 @@ html{
     width: 75px;
     border-radius: 13px;
     margin-right: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.144);
 }
 
 textarea{ 
@@ -205,6 +204,19 @@ textarea{
 #botao_comentario{
     display: flex;
     justify-content: flex-end;
+        button {
+        transition: all 0.1s ease;
+        background-color: rgba(0, 0, 0, 0.904);
+        color: rgb(255, 255, 255);
+        border: none;
+    }
+
+    button:hover {
+        transition: all 0.1s ease;
+        background-color: rgba(0, 0, 0, 0.616);
+        color: rgb(255, 255, 255);
+        border: none;
+    }
 }
 
 .primeiro_com{
