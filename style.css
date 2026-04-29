@@ -1,6 +1,9 @@
+html{
+    overflow-x:hidden;
+}
 
-#body2{
-    background-image: 
+#body2 {
+    background-image:
         linear-gradient(rgba(0, 0, 0, 0)),
         url(assets/images/image_background_2.jpg);
     background-size: cover;
@@ -8,6 +11,7 @@
     background-position: 3% -3%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 #body2::before {
     content: "";
     position: fixed;
@@ -16,7 +20,7 @@
     z-index: -1;
 }
 
-#body1{
+#body1 {
     background-image: url(assets/images/image_background.jpg);
     background-size: cover;
     background-color: black;
@@ -25,32 +29,35 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.image{
+.image {
     margin-top: 20px;
     margin-bottom: 20px;
     width: 700px;
     caret-color: transparent;
-    
+
 }
 
-#container-login{
-    background-color: rgba(236, 236, 236, 0.884)!important;
+#container-login {
+    background-color: rgba(236, 236, 236, 0.884) !important;
     color: rgb(0, 0, 0) !important;
     box-shadow: 9px 9px 14px 9px rgba(0, 0, 0, 0.459) !important;
-    input{
+
+    input {
         padding: 10px !important;
         box-shadow: inset 2px 3px 9px 0px rgba(0, 0, 0, 0.274);
     }
-    button{
+
+    button {
         box-shadow: 0 5px 0 rgba(0, 0, 0, 0.274) !important;
         transition: all 0.1s ease;
         background-color: rgba(0, 0, 0, 0.904);
         color: rgb(255, 255, 255);
         border: none;
     }
-    button:hover{
+
+    button:hover {
         transform: translateY(3px);
-        box-shadow: 0 2px 0 rgba(0, 0, 0, 0.274)!important;
+        box-shadow: 0 2px 0 rgba(0, 0, 0, 0.274) !important;
         transition: all 0.1s ease;
         background-color: rgba(0, 0, 0, 0.616);
         color: rgb(255, 255, 255);
@@ -58,44 +65,61 @@
     }
 }
 
-.position-form{
+.position-form {
     max-width: 400px;
     position: absolute;
     bottom: -150px;
     left: 50%;
 }
 
-#image-logo{
+#image-logo {
     max-width: 800px;
 }
 
-#logout_button{
+#logout_button_div {
+    display: flex;
+    justify-content: center;
+    gap: 10px !important;
+}
+
+#logout_button {
     color: white;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.863);
     border-radius: 15px;
-    padding: 7px 14px;
-    margin-left: 30px;
+    padding: 7px 30px;
+    margin: 6px 20px;
+    max-width: 400px;
 }
 
-.sections{
+.sections {
     margin-top: 90px !important;
     margin: 0px 50px;
     background-color: rgba(240, 248, 255, 0.932) !important;
     padding: 10px;
     color: black !important;
     border-radius: 10px 10px 0px 0px;
-        justify-content: center !important;
+    justify-content: center !important;
+    min-width: 300px;
+    max-width: 350px;
 }
 
-.row{
-    width: 100% !important;
+.row {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
     display: flex !important;
     flex-wrap: wrap !important;
-    justify-content: space-between !important;
+    justify-content: center !important;
 }
 
-.div_noticia_titulo{
+@media (max-width: 1000px) {
+    .row {
+        justify-content: flex-start !important;
+        gap: 10px;
+    }
+}
+
+.div_noticia_titulo {
     justify-content: center !important;
     text-align: center;
     display: flex;
@@ -103,19 +127,20 @@
     margin-bottom: 10px;
 }
 
-.div_noticia_subtitulo{
+.div_noticia_subtitulo {
     justify-content: center !important;
     display: flex;
     margin-bottom: 4px;
 }
 
-#mensagem{
+#mensagem {
     margin: 0;
     padding: 0;
     visibility: hidden;
     height: 0;
 }
-#erro{
+
+#erro {
     margin: 0;
     padding: 0;
     visibility: visible;
