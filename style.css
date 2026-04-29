@@ -145,3 +145,36 @@ html{
     padding: 0;
     visibility: visible;
 }
+
+.circulo{
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+}
+
+textarea{ 
+    overflow-y: hidden;
+    resize: none;
+    margin-left: 1%;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+}
+
+#comentarios{
+    max-width: 70%;
+}
+#personalizado{
+    margin-top: 5%;
+    text-align: left;
+    width: 100%;
+}
+#botao_comentario{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.comentario{
+    padding-top: 2%;
+}
