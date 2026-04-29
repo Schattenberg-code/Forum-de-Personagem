@@ -62,5 +62,9 @@ document.getElementById("form-login").onsubmit = (e) => {
     }
 }
 
+document.getElementById("com_personalizado").onsubmit = (evento) => {
+    evento.preventDefault();
 
+    console.log("ALOOO")
+}
 
