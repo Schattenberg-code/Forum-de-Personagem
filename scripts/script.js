@@ -71,9 +71,10 @@ if (form_login) {
 
 //=============================================================================================================================================//
 
-let changeHeight = document.querySelectorAll(".comentario")
+
 
 function mudarAltura(){
+    let changeHeight = document.querySelectorAll(".comentario")
     changeHeight.forEach(redimensionar =>{
         redimensionar.style.height = 'auto'
         redimensionar.style.height = (redimensionar.scrollHeight) + 'px';
@@ -87,14 +88,19 @@ const form_envio = document.querySelector('#mandar_comentario');
 function scroll(){
     let container_comentario = document.getElementById("div_comentarios");
 
-    container_comentario.scrollTo({
+    if(window.innerWidth <= 770){
+        container_comentario.scrollTop = container_comentario.scrollHeight;
+    }else{
+      container_comentario.scrollTo({
         top: container_comentario.scrollHeight,
         behavior: "smooth"
-    })
+    })  
+    }
+    
 }
 
 if (window.location.pathname.includes("comentarios.html")) {
-    window.onload = scroll()
+    window.onload = scroll;
 }
 
 if (form_envio) {
@@ -139,6 +145,7 @@ if (form_envio) {
             if (ultimoComentario) {
                 ultimoComentario.insertAdjacentHTML('afterend', novoComentarioHTML);
                 scroll();
+                mudarAltura();
             }
 
             form_envio.reset();
@@ -153,8 +160,13 @@ if (form_envio) {
                     ultimoComentario = todosComentarios[todosComentarios.length - 1];
                     scroll();
                     setTimeout(() => {
+                        mudarAltura();
+                    }, 30);
+                    mudarAltura();
+                    setTimeout(() => {
                         ultimoComentario.insertAdjacentHTML('afterend', BotNamoDava);
                         scroll();
+                        mudarAltura();
                     }, 5000);
                 }, 2500);
 
