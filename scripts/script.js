@@ -71,6 +71,17 @@ if (form_login) {
 
 //=============================================================================================================================================//
 
+let changeHeight = document.querySelectorAll(".comentario")
+
+function mudarAltura(){
+    changeHeight.forEach(redimensionar =>{
+        redimensionar.style.height = 'auto'
+        redimensionar.style.height = (redimensionar.scrollHeight) + 'px';
+    })
+}
+
+window.addEventListener('resize', mudarAltura);
+
 const form_envio = document.querySelector('#mandar_comentario');
 
 function scroll(){
@@ -154,6 +165,8 @@ if (form_envio) {
 
     });
 }
+
+
 
 //=============================================================================================================================================//
 
