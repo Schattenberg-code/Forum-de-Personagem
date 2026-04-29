@@ -132,7 +132,7 @@ if (form_envio) {
 
             form_envio.reset();
 
-            if (todosComentarios.length == 6) {
+            if (todosComentarios.length == 5) {
                 let todosComentarios = document.querySelectorAll('.comentario_alheio');
                 let ultimoComentario = todosComentarios[todosComentarios.length - 1];
                 setTimeout(() => {
