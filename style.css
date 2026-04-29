@@ -165,14 +165,21 @@ html{
 .circulo{
     height: 75px;
     width: 75px;
-    border-radius: 50%;
+    border-radius: 13px;
+    margin-right: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.144);
 }
 
 textarea{ 
+    background-color: aliceblue;
+    color: black;
+    border-radius: 13px;
+    border: 1px solid rgba(0, 0, 0, 0.144);
     overflow-y: hidden;
     resize: none;
     align-items: center;
     width: 50%;
+    padding: 8PX;
 }
 
 #comentarios{
@@ -183,7 +190,7 @@ textarea{
     height: auto;
 }
 
-#comentario_alheio{
+.comentario_alheio{
     margin: 10px 10px;
 }
 
@@ -209,5 +216,5 @@ textarea{
 }
 
 .comentario{
-    padding-top: 2%;
+    align-items: center;
 }
