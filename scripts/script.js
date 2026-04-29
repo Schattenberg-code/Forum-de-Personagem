@@ -82,7 +82,7 @@ if (form_envio) {
 
             const novoComentarioHTML = `
             <div class="comentario_alheio">
-                <div class="d-flex">
+                <div class="d-flex comentario_meu">
                     <img class="circulo" src="assets/images/avatar_comentario.png" alt="Foto do Ezio">
                     <textarea disabled class="comentario">${textoDigitado}</textarea>
                 </div>

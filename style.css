@@ -1,6 +1,4 @@
-html{
-    overflow-x:hidden;
-}
+
 
 #body2 {
     background-image:
@@ -163,10 +161,11 @@ html{
 }
 
 .circulo{
-    height: 75px;
-    width: 75px;
-    border-radius: 13px;
-    margin-right: 10px;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    margin-right: 4px;
+    margin-top: 4px;
 }
 
 textarea{ 
@@ -181,9 +180,14 @@ textarea{
     padding: 8PX;
 }
 
+#div_comentarios{
+    overflow-y: scroll;
+    max-height: 400px;
+}
+
 #comentarios{
     margin-top: 40px;
-    background-color: rgba(43, 43, 43, 0.712);
+    background-color: rgba(0, 0, 0, 0.678);
     border-radius: 2px;
     justify-content: center;
     width: 1000px;
@@ -192,6 +196,14 @@ textarea{
 
 .comentario_alheio{
     margin: 10px 10px;
+}
+
+.comentario_meu{
+    justify-content: flex-end !important;
+}
+
+#div_form_comentario{
+position: sticky;
 }
 
 #mandar_comentario{
@@ -206,6 +218,7 @@ textarea{
     display: flex;
     justify-content: flex-end;
         button {
+            font-size: 14px;
             margin-right: 10px;
             width: 100px;
             height: 30px;
