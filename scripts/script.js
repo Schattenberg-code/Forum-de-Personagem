@@ -1,5 +1,4 @@
-let usuario = document.getElementById('usuario').value;
-let senha = document.getElementById('senha').value;
+
 
 if (window.location.pathname.includes("forum.html")) {
     if (localStorage.getItem("logado") !== "true") {
@@ -29,47 +28,27 @@ if (window.location.pathname.includes("forum.html")) {
 
 }
 
-(() => {
-    'use strict'
-
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    const forms = document.querySelectorAll('.needs-validation')
-
-    // Loop over them and prevent submission
-    Array.from(forms).forEach(form => {
-        form.addEventListener('submit', event => {
-            if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-            }
-            if (usuario !== 'admin') {
-                form.classList.add('is-invalid');
-                event.preventDefault();
-                event.stopPropagation();
-            }
-
-            form.classList.add('was-validated')
-
-
-        }, false)
-    })
-})()
-
 document.getElementById("form-login").onsubmit = (e) => {
 
     e.preventDefault();
 
     console.log("OI");
 
+    let usuario = document.getElementById('usuario').value;
+    let senha = document.getElementById('senha').value;
+    let msg = document.getElementById('mensagem');
 
+    msg.innerHTML = "";
 
     let valido = true;
 
     if (usuario !== 'admin') {
         valido = false;
+        msg.innerHTML = "<div><p id='erro' class='text-danger d-flex justify-content-center'> Usuário Inválido </p></div>";
     }
     if (senha !== '1234' || isNaN(senha)) {
         valido = false;
+        msg.innerHTML = "<div><p id='erro' class='text-danger d-flex justify-content-center'> Senha Inválida </p></div>";
     }
 
     if (valido == true) {

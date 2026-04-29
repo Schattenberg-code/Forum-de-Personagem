@@ -91,3 +91,15 @@
     color: black !important;
     border-radius: 10px 10px 0px 0px;
 }
+
+#mensagem{
+    margin: 0;
+    padding: 0;
+    visibility: hidden;
+    height: 0;
+}
+#erro{
+    margin: 0;
+    padding: 0;
+    visibility: visible;
+}
