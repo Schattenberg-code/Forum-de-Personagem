@@ -71,6 +71,7 @@ if (form_login) {
 document.getElementById("mandar_comentario").onsubmit = (evento) => {
     evento.preventDefault();
 
-    console.log("ALOOO")
+    console.log("Mensagem Enviada");
+    
 }
 
