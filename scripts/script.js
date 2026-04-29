@@ -9,6 +9,7 @@ if (window.location.pathname.includes("forum.html")) {
     function ResetarTime() {
         clearTimeout(timer);
         timer = setTimeout(() => {
+            localStorage.clear();
             alert('inatividade!')
             window.location.replace("index.html");
         }, 300000);
