@@ -93,11 +93,11 @@
     display: flex !important;
     flex-wrap: wrap !important;
     justify-content: space-between !important;
-    margin: 0px 10px !important;
 }
 
 .div_noticia_titulo{
     justify-content: center !important;
+    text-align: center;
     display: flex;
     font-size: 20px;
     margin-bottom: 10px;
