@@ -12,6 +12,22 @@ html{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+#body_comentario{
+    background-image: url(assets/images/image_background_3.jpg);
+    background-size: cover;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: 3% 4%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#body_comentario::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.568);
+    z-index: -1;
+}
+
 #body2::before {
     content: "";
     position: fixed;
@@ -155,26 +171,31 @@ html{
 textarea{ 
     overflow-y: hidden;
     resize: none;
-    margin-left: 1%;
     align-items: center;
-    text-align: center;
     width: 50%;
 }
 
 #comentarios{
-    max-width: 70%;
+    margin-top: 40px;
+    background-color: rgba(255, 255, 255, 0.712);
+    justify-content: center;
+    width: 1000px;
+    height: auto;
 }
+
+#comentario_alheio{
+    margin: 10px 10px;
+}
+
+#div_comentario{
+    margin: 10px 10px;
+}
+
 #personalizado{
-    margin-top: 5%;
-    text-align: left;
     width: 100%;
 }
+
 #botao_comentario{
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
-}
-
-.comentario{
-    padding-top: 2%;
 }
