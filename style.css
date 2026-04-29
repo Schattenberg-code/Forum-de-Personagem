@@ -168,7 +168,6 @@ textarea{
     color: black;
     border-radius: 13px;
     border: 1px solid rgba(0, 0, 0, 0.144);
-    overflow-y: auto;
     resize: none;
     align-items: center;
     width: 70%;
@@ -187,7 +186,6 @@ textarea{
         display: flex;
         flex-direction: column;
         height: 100dvh;
-        overflow: hidden;
     }
 
     #comentarios {
@@ -202,7 +200,6 @@ textarea{
 
     #div_comentarios {
         flex: 1;
-        overflow-y: auto;
     }
 }
 
