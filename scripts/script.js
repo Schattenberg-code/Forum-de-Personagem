@@ -9,6 +9,7 @@ if (window.location.pathname.includes("forum.html")) {
     function ResetarTime() {
         clearTimeout(timer);
         timer = setTimeout(() => {
+            localStorage.clear();
             alert('inatividade!')
             window.location.replace("index.html");
         }, 300000);
@@ -42,13 +43,14 @@ document.getElementById("form-login").onsubmit = (e) => {
 
     let valido = true;
 
-    if (usuario !== 'admin') {
-        valido = false;
-        msg.innerHTML = "<div><p id='erro' class='text-danger d-flex justify-content-center'> Usuário Inválido </p></div>";
-    }
     if (senha !== '1234' || isNaN(senha)) {
         valido = false;
         msg.innerHTML = "<div><p id='erro' class='text-danger d-flex justify-content-center'> Senha Inválida </p></div>";
+    }
+
+    if (usuario !== 'admin') {
+        valido = false;
+        msg.innerHTML = "<div><p id='erro' class='text-danger d-flex justify-content-center'> Usuário Inválido </p></div>";
     }
 
     if (valido == true) {
