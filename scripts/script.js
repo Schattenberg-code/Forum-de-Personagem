@@ -1,3 +1,6 @@
+let usuario = document.getElementById('usuario').value;
+let senha = document.getElementById('senha').value;
+
 if (window.location.pathname.includes("forum.html")) {
     if (localStorage.getItem("logado") !== "true") {
         window.location.replace("index.html");
@@ -9,7 +12,7 @@ if (window.location.pathname.includes("forum.html")) {
         timer = setTimeout(() => {
             alert('inatividade!')
             window.location.replace("index.html");
-        }, 30000);
+        }, 300000);
     }
 
     window.onload = ResetarTime;
@@ -26,14 +29,39 @@ if (window.location.pathname.includes("forum.html")) {
 
 }
 
+(() => {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+            if (usuario !== 'admin') {
+                form.classList.add('is-invalid');
+                event.preventDefault();
+                event.stopPropagation();
+            }
+
+            form.classList.add('was-validated')
+
+
+        }, false)
+    })
+})()
+
 document.getElementById("form-login").onsubmit = (e) => {
 
     e.preventDefault();
 
     console.log("OI");
 
-    let usuario = document.getElementById('usuario').value;
-    let senha = document.getElementById('senha').value;
+
 
     let valido = true;
 
