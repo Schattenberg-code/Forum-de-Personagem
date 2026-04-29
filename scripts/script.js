@@ -77,8 +77,8 @@ if (form_envio) {
         const textoDigitado = form_envio.querySelector('textarea').value;
 
         if (textoDigitado !== '') {
-            const todosComentarios = document.querySelectorAll('.comentario_alheio');
-            const ultimoComentario = todosComentarios[todosComentarios.length - 1];
+            let todosComentarios = document.querySelectorAll('.comentario_alheio');
+            let ultimoComentario = todosComentarios[todosComentarios.length - 1];
 
             const novoComentarioHTML = `
             <div class="comentario_alheio">
@@ -116,13 +116,19 @@ if (form_envio) {
             form_envio.reset();
 
             if (todosComentarios.length >= 1) {
-                const todosComentarios = document.querySelectorAll('.comentario_alheio');
-                const ultimoComentario = todosComentarios[todosComentarios.length - 1];
+                let todosComentarios = document.querySelectorAll('.comentario_alheio');
+                let ultimoComentario = todosComentarios[todosComentarios.length - 1];
                 setTimeout(() => {
                     ultimoComentario.insertAdjacentHTML('afterend', BotDava);
+
+                    todosComentarios = document.querySelectorAll('.comentario_alheio');
+                    ultimoComentario = todosComentarios[todosComentarios.length - 1];
+                    setTimeout(() => {
+                        ultimoComentario.insertAdjacentHTML('afterend', BotNamoDava);
+                    }, 5000);
                 }, 2500);
-                
-                
+
+
             }
         }
 
