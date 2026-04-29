@@ -68,10 +68,37 @@ if (form_login) {
 }
 
 
-document.getElementById("mandar_comentario").onsubmit = (evento) => {
-    evento.preventDefault();
+const form_envio = document.querySelector('#mandar_comentario');
 
-    console.log("Mensagem Enviada");
-    
+if (form_envio) {
+    form_envio.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const textoDigitado = form_envio.querySelector('textarea').value;
+
+        if(textoDigitado !== ''){
+           const todosComentarios = document.querySelectorAll('.comentario_alheio');
+        const ultimoComentario = todosComentarios[todosComentarios.length - 1];
+
+        const novoComentarioHTML = `
+            <div class="comentario_alheio">
+                <div class="d-flex">
+                    <img class="circulo" src="assets/images/avatar_comentario.png" alt="Foto do Ezio">
+                    <textarea disabled class="comentario">${textoDigitado}</textarea>
+                </div>
+            </div>
+        `;
+
+        console.log(todosComentarios);
+
+        if (ultimoComentario) {
+            ultimoComentario.insertAdjacentHTML('afterend', novoComentarioHTML);
+        }
+
+        form_envio.reset(); 
+        }
+
+        
+    });
 }
 
