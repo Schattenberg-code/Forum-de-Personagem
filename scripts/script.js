@@ -71,16 +71,16 @@ if (form_login) {
 const form_envio = document.querySelector('#mandar_comentario');
 
 if (form_envio) {
-    form_envio.addEventListener('submit', function(e) {
+    form_envio.addEventListener('submit', function (e) {
         e.preventDefault();
-        
+
         const textoDigitado = form_envio.querySelector('textarea').value;
 
-        if(textoDigitado !== ''){
-           const todosComentarios = document.querySelectorAll('.comentario_alheio');
-        const ultimoComentario = todosComentarios[todosComentarios.length - 1];
+        if (textoDigitado !== '') {
+            const todosComentarios = document.querySelectorAll('.comentario_alheio');
+            const ultimoComentario = todosComentarios[todosComentarios.length - 1];
 
-        const novoComentarioHTML = `
+            const novoComentarioHTML = `
             <div class="comentario_alheio">
                 <div class="d-flex">
                     <img class="circulo" src="assets/images/avatar_comentario.png" alt="Foto do Ezio">
@@ -89,16 +89,44 @@ if (form_envio) {
             </div>
         `;
 
-        console.log(todosComentarios);
+            const BotDava = `
+            <div class="comentario_alheio">
+                <div class="d-flex ">
+                    <img class="circulo" src="assets/noticias/noticia_4.png" alt="Foto do Dava">
+                    <textarea disabled
+                        class="comentario">tra schlagi depoisqueoErenmorreu é pq ucaraqéprapotagonistapami não vou assistir mais não</textarea>
+                    </div>
+                </div>
+                `;
 
-        if (ultimoComentario) {
-            ultimoComentario.insertAdjacentHTML('afterend', novoComentarioHTML);
+            const BotNamoDava = `<div class="comentario_alheio">
+                <div class="d-flex ">
+                    <img class="circulo" src="assets/images/casalzinho.jpg" alt="Foto da Namorada do Dava">
+                    <textarea disabled
+                        class="comentario">não entendi foi nada do que você falou agora</textarea>
+                    </div>
+                </div>`
+
+            console.log(todosComentarios.length);
+
+            if (ultimoComentario) {
+                ultimoComentario.insertAdjacentHTML('afterend', novoComentarioHTML);
+            }
+
+            form_envio.reset();
+
+            if (todosComentarios.length >= 1) {
+                const todosComentarios = document.querySelectorAll('.comentario_alheio');
+                const ultimoComentario = todosComentarios[todosComentarios.length - 1];
+                setTimeout(() => {
+                    ultimoComentario.insertAdjacentHTML('afterend', BotDava);
+                }, 2500);
+                
+                
+            }
         }
 
-        form_envio.reset(); 
-        }
 
-        
     });
 }
 
